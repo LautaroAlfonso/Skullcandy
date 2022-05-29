@@ -61,7 +61,7 @@ background-size: cover;
 
 header{
     background-color: rgba(245, 245, 245, 0.281);
-position: sticky;}
+}
     /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg fill-opacity='0.52'%3E%3Ccircle fill='%23716E72' cx='50' cy='0' r='50'/%3E%3Cg fill='%236d6a6e' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%2369676a' cx='50' cy='100' r='50'/%3E%3Cg fill='%23666366' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23626063' cx='50' cy='200' r='50'/%3E%3Cg fill='%235e5c5f' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%235b595b' cx='50' cy='300' r='50'/%3E%3Cg fill='%23575558' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%23535254' cx='50' cy='400' r='50'/%3E%3Cg fill='%23504e50' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%234c4b4d' cx='50' cy='500' r='50'/%3E%3Cg fill='%23494749' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%23454445' cx='50' cy='600' r='50'/%3E%3Cg fill='%23424142' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%233e3d3e' cx='50' cy='700' r='50'/%3E%3Cg fill='%233b3a3b' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23373737' cx='50' cy='800' r='50'/%3E%3Cg fill='%23343334' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23313031' cx='50' cy='900' r='50'/%3E%3Cg fill='%232d2d2d' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%232A2A2A' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
     background-attachment: fixed;
     background-size: contain;} */
@@ -177,18 +177,11 @@ section{
 
 }
 
+
 .float-end{
-    height: 520px;
-    width: 700px;
+    max-width: 100%;
+    height: auto;
 }
-
-.d-block{
-    height: 520px;
-    width: 700px;
-
-}
-
-
 
 footer{
     background-color: #ccc2c2;
@@ -224,8 +217,8 @@ height: 200px;
 }
 
 .imgtipo1{
-    width: 370px;
-    height: 370px;
+  max-width: 100%;
+  height: auto;
 }
 
 .imgtipo1:hover{
@@ -248,55 +241,27 @@ margin-top: 40px;
 
 @media screen and (max-width: 780px) {
     .productosgrilla {
-     
       display: grid;
-          grid-template-areas: " main"
-   "main"
-   "main"
-   "main"
-   "main"
-   "main"
+          grid-template-areas:
+           "main"
+           "main"
+           "main"
+           "main"
+           "main"
+           "main"
    ;
     }
   }
 
-/* @media (min-width:768px) and (max-width:320px) {
 
-    
-.aside{
-    grid-template-areas: "aside"
-                         "aside"
-                         "aside"
-                         "aside";
-}
-
-.article{
-    grid-template-areas: "article"
-                         "article"
-                         "article"
-                         "article";
-}
-    
-}
-
-@media (min-width:1024px) and (max-width:768px){
-    .aside{
-        grid-template-areas: "aside aside"
-                             "aside aside";
-    }
-
-    .article{
-        grid-template-areas: "article article"
-                             "article article";
-    }
-} */
 
 .productosgrilla {
     
     display: grid;
-        grid-template-areas: "main main main"
-   "main main main"
-   "main main main";
+        grid-template-areas: 
+    "main main main"
+    "main main main"
+    "main main main";
   }
   
  div p {
@@ -354,22 +319,16 @@ margin-top: 40px;
   }
   
   .imgtipo3 {
-    position: relative;
-    height: 260px;
-    width: 260px;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+   
+   max-width: 100%;
+   height: auto;
+
   }
   
   .imgtipo3:hover {
-    position: relative;
-    height: 260px;
-    width: 260px;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    
+    max-width: 100%;
+    height: auto;
+    
   }
   

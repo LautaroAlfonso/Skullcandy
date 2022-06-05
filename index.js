@@ -69,6 +69,12 @@
 
 
 
+function solicitarNombre(){
+    let nombre = prompt ("Ingrese su nombre")
+    alert("Nombre ingresado: " + nombre)
+}
+
+
 
 class Product {
     constructor (name, price, description){

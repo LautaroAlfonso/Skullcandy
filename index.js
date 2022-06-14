@@ -13,12 +13,13 @@ class carritoDeCompras{
     removeFirstProduct(){this.productos.shift()}
 
     getTotal() {
-        for ( const producto of this.productos) {
-            console.log(producto)
-        this.total = this.total + producto.price}
-         console.log(this.total)
+        let totalCalculado;
+        for ( const producto of this.productos){
+            totalCalculado = totalCalculado + producto.price;
         }
+        return totalCalculado;
     }
+}
 
     class Product{
         constructor(name, price){
@@ -42,5 +43,8 @@ class carritoDeCompras{
     cliente.addProduct(p5)
     cliente.addProduct(p6)
     cliente.getTotal()
+    cliente.getTotal()
+    cliente.getTotal()
+    console.log(cliente.total)
 
     

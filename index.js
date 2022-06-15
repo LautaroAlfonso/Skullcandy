@@ -5,7 +5,6 @@ class carritoDeCompras{
     constructor(){
         this.productos = []
         this.name = ""
-        this.total = 0
     }
     setName(value){this.name = value}
     addProduct(Product){this.productos.push(Product)}
@@ -13,11 +12,11 @@ class carritoDeCompras{
     removeFirstProduct(){this.productos.shift()}
 
     getTotal() {
-        let totalCalculado;
+       let totalCalculado = 0;
         for ( const producto of this.productos){
             totalCalculado = totalCalculado + producto.price;
         }
-        return totalCalculado;
+         return totalCalculado;
     }
 }
 
@@ -45,6 +44,6 @@ class carritoDeCompras{
     cliente.getTotal()
     cliente.getTotal()
     cliente.getTotal()
-    console.log(cliente.total)
+    console.log(cliente.getTotal())
 
     

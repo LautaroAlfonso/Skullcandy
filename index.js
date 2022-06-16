@@ -46,4 +46,20 @@ class carritoDeCompras{
     cliente.getTotal()
     console.log(cliente.getTotal())
 
-    
+  const mercaderia =[
+    {nombre: "Grind", precio: 8800},
+    {nombre: "Pit Viper Push", precio: 7000 },
+    {nombre: "Pit Viper", precio: 8600},
+    {nombre: "Indy", precio: 6500},
+    {nombre: "Indy ANC", precio: 5500},
+    {nombre: "Budweiser Dime", precio: 9000},
+  ]
+
+const Busqueda = mercaderia.filter((El)=> El.nombre.includes("Viper")
+
+)
+console.log(Busqueda)
+
+const Objetos = mercaderia.find((El)=> El.nombre === "Indy")
+
+console.log(Objetos)

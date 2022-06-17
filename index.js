@@ -1,4 +1,99 @@
+let showProducts = document.getElementById("showProducts")
+let showAllProducts = document.getElementById("showAllProducts")
+const div = document.querySelector(".div")
+ 
+let cart = []
 
+// MOSTRAR PRODUCTOS //
+
+function mostrarProductos() {
+    Products.forEach((Product)=> {
+        let card = document.createElement("div")
+        showAllProducts.append(card)
+        let img = document.createElement("img")
+        img.setAttribute("src", Product.img)
+        let name = document.createElement("h3")
+        name.innerText = (Product.name)
+        let price = document.createElement("p")
+        price.innerText = (Product.price)
+        let buyButton = document.createElement("button")
+        buyButton.innerText = ("Agregar al carrito")
+        card.append(img, name, price, buyButton)
+
+        buyButton.addEventListener("click", function()
+        {
+            cart.push(Product)
+            alert ("Agregaste " + Product.name + " al carrito")
+            
+            div.innerHTML = ""
+            showCart()
+        })
+    })
+}
+mostrarProductos()
+
+// MOSTRAR CARRITO//
+
+let cartView = document.getElementById("showProductsCart")
+let goToCart = document.getElementById("goToCart")
+let carrito = document.getElementById ("mostrarCarrito")
+
+let alertCart = document.createElement("h2")
+alertCart.setAttribute = ("class", "alerta")
+
+if (!cart.length){
+    alertCart.innerText = ("El carrito esta vacio")
+    div.append(alertCart)
+}
+
+function showCart() {
+    alertCart.remove()
+
+    cart.forEach((Product)=>{
+        const divCart = document.createElement("li")
+        divCart.innerHTML += ` 
+        <img src = "${Product.img}">
+        <h3> ${Product.name}</h3>
+        <h3> ${Product.price}</h3>
+        <button class="eliminar" data id= ${Product.id}>X</button>` 
+        
+
+        div.appendChild(divCart)
+        
+    })
+
+    let eliminarItem = document.querySelector(".eliminar")
+
+
+
+// REDUCE PRECIO TOTAL DEL CARRITO //
+
+const total = cart.map((item)=> item.price ).reduce((cartTotalPrice, currentItemPrice)=> cartTotalPrice + currentItemPrice, 0);
+console.log(total)
+
+let totalCompra = document.createElement("h4")
+totalCompra.innerText = ("Total: " + total)
+div.append(totalCompra)
+
+
+// VACIAR CORRITO//
+
+ let deleteCart = document.createElement("button")
+deleteCart.innerText = ("Vaciar carrito")
+div.append(deleteCart)
+
+ deleteCart.onclick = () => {
+    cart =[]
+    div.innerHTML = ``
+    console.log(cart) 
+                            }
+}
+
+buttonCart.onclick = () => {
+    div.innerHTML = ``
+
+    showCart()
+}
 
 
 class carritoDeCompras{
@@ -42,8 +137,7 @@ class carritoDeCompras{
     cliente.addProduct(p5)
     cliente.addProduct(p6)
     cliente.getTotal()
-    cliente.getTotal()
-    cliente.getTotal()
+
     console.log(cliente.getTotal())
 
   const mercaderia =[

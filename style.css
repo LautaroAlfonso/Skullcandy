@@ -273,7 +273,7 @@ margin-top: 40px;
     
   }
 
-.productos {
+#showProducts {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -318,14 +318,14 @@ margin-top: 40px;
             box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
   }
   
-  .imgtipo3 {
+  #showAllProducts {
    
    max-width: 100%;
    height: auto;
 
   }
   
-  .imgtipo3:hover {
+  #showAllProducts :hover {
     
     max-width: 100%;
     height: auto;

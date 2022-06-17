@@ -23,6 +23,7 @@
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
+            
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                   <li class="nav-item">
@@ -32,8 +33,19 @@
                     <a class="nav-link" href="productos.html">PRODUCTOS</a>
                   </li>
                   <li class="nav-item">
+                    <input type="text" placeholder="Search" id="inputSearch">
+                    <button id="filtrar">Buscar</button>
+                  </li>
+                  
+                  <li class="nav-item">
                     <a class="nav-link" href="contacto.html">CONTACTO</a>
                   </li>
+                  <li class="nav-item">
+                    <button id="mostrarCarrito"> Ver carrito</button>
+                   </li>
+
+                
+
                 </ul>
               </div>
             </div>
@@ -41,51 +53,24 @@
     </header>
     <main>
 	
+    <section id="showProducts">
+      <div id="showAllProducts">
 
-        <section>
-            <article>
-            
-            <div class="productosgrilla">
-                
-                    <div class="productos--div" data-aos="fade-up" id="n-nuevo">
-        
-                        <img class="imgtipo3" src="img/imagen2.png"><p class="textoprod">Grind® True Wireless Earbuds
-                                <br>
-                            $8800</p>
-                            
-                </div>
-        <div class="productos--div" data-aos="fade-up">
-                        <img class="imgtipo3" src="img/imagen4.png"><p class="textoprod">Pit Viper Push™ Active True Wireless Earbuds
-                                <br>
-                            $7000</p>
-                          
-                    </div>
-                    <div class="productos--div" data-aos="fade-up" id="rebaja">
-                        <img class="imgtipo3" src="img/imagen5.png"><p>Pit Viper Grind® True Wireless Earbuds
-                                <br>
-                            $8600</p>
-                         
+      </div>
+
+    </section>
+        <section id="showProductsCarts">
+            <h2>Carrito</h2>
+        <div class="showCart">
+          <div id="cartList">
+            <h3>Detalle de compra</h3>
+            <div class="div">
+
+            </div> 
+
+          </div>
+
         </div>
-        <div class="productos--div" data-aos="fade-up">
-                        <img class="imgtipo3" src="img/imagen6.png"><p class="textoprod">Indy™ Fuel True Wireless Earbuds
-                                <br>
-                            $6500</p>
-                          
-        </div>
-        <div class="productos--div" data-aos="fade-up" id="rebaja">
-                        <img class="imgtipo3" src="img/imagen7.png"><p>Indy™ ANC Noise Canceling True Wireless
-                                <br>
-                            $5500</p>
-                    </div>	
-        <div class="productos--div" data-aos="fade-up" id="n-nuevo">
-                        <img class="imgtipo3" src="img/imagen8.png"><p>Budweiser Dime® True Wireless Earbuds
-                                <br>
-                            $9000</p>
-                         
-        </div>
-            
-                </div>
-            </article>
         </section>
         </main>
 <footer>
@@ -94,6 +79,7 @@
       <img src="img/footery.png" class="logofooter" alt="">
     </div>
 </footer>
+<script src="productos.js"></script>
 <script src="index.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>

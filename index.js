@@ -1,8 +1,13 @@
 let showProducts = document.getElementById("showProducts")
 let showAllProducts = document.getElementById("showAllProducts")
 const div = document.querySelector(".div")
- 
+
 let cart = []
+
+
+
+
+
 
 // MOSTRAR PRODUCTOS //
 
@@ -32,6 +37,9 @@ function mostrarProductos() {
 }
 mostrarProductos()
 
+
+
+
 // MOSTRAR CARRITO//
 
 let cartView = document.getElementById("showProductsCart")
@@ -55,7 +63,7 @@ function showCart() {
         <img src = "${Product.img}">
         <h3> ${Product.name}</h3>
         <h3> ${Product.price}</h3>
-        <button class="eliminar" data id= ${Product.id}>X</button>` 
+       ` 
         
 
         div.appendChild(divCart)
@@ -66,14 +74,20 @@ function showCart() {
 
 
 
+
+
+
 // REDUCE PRECIO TOTAL DEL CARRITO //
 
-const total = cart.map((item)=> parseInt(item.price )).reduce((cartTotalPrice, currentItemPrice)=> cartTotalPrice + currentItemPrice, 0);
-console.log(total)
+const total = cart.map((Product)=> parseInt(Product.price )).reduce((cartTotalPrice, currentProductPrice)=> cartTotalPrice + currentProductPrice, 0);
+console.log(total);
 
 let totalCompra = document.createElement("h4")
 totalCompra.innerText = ("Total: " + total)
 div.append(totalCompra)
+
+
+
 
 
 // Vaciar carrito //
@@ -94,6 +108,10 @@ buttonCart.onclick = () => {
 
     showCart()
 }
+
+
+
+
 
 // Filtrar Productos //
 
@@ -139,6 +157,10 @@ filtrar.onclick = () => {
     showAllProducts. innerHTML= ``
     filtrarPorCat()
 }
+
+
+
+
 
 
 

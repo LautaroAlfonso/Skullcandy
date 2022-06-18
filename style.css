@@ -254,6 +254,36 @@ margin-top: 40px;
   }
 
 
+.Tcarrito{
+    font-family: 'Anton', sans-serif;
+    border-bottom: #000000;
+    border-top: black;
+  text-align: center;
+}
+
+li {
+    font-family: 'Anton', sans-serif;
+    border-bottom: #000000;
+    border-top: black;
+    list-style: none;
+    text-align: center;
+}
+
+li  img {
+    width: 150px;
+    height: 150px;
+}
+
+h4 {
+    text-align: center;
+    margin-top: 20px;
+    border-bottom: #635f5f;
+}
+
+.div {
+ text-align: center;
+
+}
  
   
   

@@ -239,31 +239,6 @@ justify-content: space-evenly;
 margin-top: 40px;
 }
 
-@media screen and (max-width: 780px) {
-    .productosgrilla {
-      display: grid;
-          grid-template-areas:
-           "main"
-           "main"
-           "main"
-           "main"
-           "main"
-           "main"
-   ;
-    }
-  }
-
-
-
-.productosgrilla {
-    
-    display: grid;
-        grid-template-areas: 
-    "main main main"
-    "main main main"
-    "main main main";
-  }
-  
  div p {
     color: rgb(63, 63, 63);
     font-size: 20px;
@@ -274,61 +249,12 @@ margin-top: 40px;
   }
 
 #showProducts {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    position: relative;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
   }
-  
-  #n-nuevo::before {
-    content: 'Nuevo';
-    background-color: rgb(109, 109, 109);
-    color: whitesmoke;
-    position: absolute;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  }
-  
-  #rebaja::before {
-    content: '30% Off';
-    background-color: rgb(141, 139, 139);
-    color: whitesmoke;
-    position: absolute;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  }
-  
-  .productos--div {
-    width: 360px;
-    height: 438px;
-    border-radius: 8px;
-    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    margin: 20px;
-    text-align: center;
-    -webkit-transition: all 0.25s;
-    transition: all 0.25s;
-  }
-  
-  .productos--div:hover {
-    -webkit-transform: translate(-15px);
-            transform: translate(-15px);
-    -webkit-box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
-            box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  #showAllProducts {
-   
-   max-width: 100%;
-   height: auto;
 
-  }
+
+ 
   
-  #showAllProducts :hover {
-    
-    max-width: 100%;
-    height: auto;
-    
-  }
+  
   

@@ -68,7 +68,7 @@ function showCart() {
 
 // REDUCE PRECIO TOTAL DEL CARRITO //
 
-const total = cart.map((item)=> item.price ).reduce((cartTotalPrice, currentItemPrice)=> cartTotalPrice + currentItemPrice, 0);
+const total = cart.map((item)=> parseInt(item.price )).reduce((cartTotalPrice, currentItemPrice)=> cartTotalPrice + currentItemPrice, 0);
 console.log(total)
 
 let totalCompra = document.createElement("h4")
@@ -76,7 +76,7 @@ totalCompra.innerText = ("Total: " + total)
 div.append(totalCompra)
 
 
-// VACIAR CORRITO//
+// Vaciar carrito //
 
  let deleteCart = document.createElement("button")
 deleteCart.innerText = ("Vaciar carrito")
@@ -94,6 +94,56 @@ buttonCart.onclick = () => {
 
     showCart()
 }
+
+// Filtrar Productos //
+
+let buscador = document.getElementById("inputSearch")
+let filtrar = document.getElementById("filtrar")
+
+function filtrarPorCat(){
+    let verTodo = document.createElement("button")
+    verTodo.innerText = ("Ver Todo")
+    showProducts.append(verTodo)
+    const filteredProducts = Products.filter((Product)=> Product.category === buscador.value)
+    console.log(filteredProducts)
+
+
+    filteredProducts.forEach((filter)=> {
+
+    let cardFilter = document.createElement("div")
+    showAllProducts.append(card)
+    let imgFilter = document.createElement("img")
+    imgFilter.setAttribute("src", Product.img)
+    let nameFilter = document.createElement("h3")
+    nameFilter.innerText = (Product.name)
+    let priceFilter = document.createElement("p")
+    priceFilter.innerText = (Product.price)
+    let buyButtonFilter = document.createElement("button")
+    buyButtonFilter.innerText = ("Agregar al carrito")
+    cardFilter.append(imgFilter, nameFilter, priceFilter, buyButtonFilter)
+    } )
+
+verTodo.onclick = () => {
+    showAllProducts.innerHTML = ``
+    mostrarProductos()
+}
+
+}
+
+buscador.onchange = () => {
+    showAllProducts.innerHTML = ``
+    filtrarPorCat()
+}
+
+filtrar.onclick = () => {
+    showAllProducts. innerHTML= ``
+    filtrarPorCat()
+}
+
+
+
+
+// Clases carrito de compras//
 
 
 class carritoDeCompras{
@@ -113,6 +163,9 @@ class carritoDeCompras{
         }
          return totalCalculado;
     }
+    getProductByName(Text) {
+        return this.productos.filter((El)=> El.nombre.includes(Text));
+      }
 }
 
     class Product{
@@ -140,20 +193,8 @@ class carritoDeCompras{
 
     console.log(cliente.getTotal())
 
-  const mercaderia =[
-    {nombre: "Grind", precio: 8800},
-    {nombre: "Pit Viper Push", precio: 7000 },
-    {nombre: "Pit Viper", precio: 8600},
-    {nombre: "Indy", precio: 6500},
-    {nombre: "Indy ANC", precio: 5500},
-    {nombre: "Budweiser Dime", precio: 9000},
-  ]
 
-const Busqueda = mercaderia.filter((El)=> El.nombre.includes("Viper")
 
-)
-console.log(Busqueda)
 
-const Objetos = mercaderia.find((El)=> El.nombre === "Indy")
 
-console.log(Objetos)
+

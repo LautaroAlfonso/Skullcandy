@@ -79,7 +79,7 @@ function showCart() {
 
 // REDUCE PRECIO TOTAL DEL CARRITO //
 
-const total = cart.map((Product)=> parseInt(Product.price )).reduce((cartTotalPrice, currentProductPrice)=> cartTotalPrice + currentProductPrice, 0);
+const total = cart.map((Product)=> parseInt(Product.price)).reduce((cartTotalPrice, currentProductPrice) => cartTotalPrice + currentProductPrice, 0);
 console.log(total);
 
 let totalCompra = document.createElement("h4")

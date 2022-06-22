@@ -51,7 +51,7 @@ const Products = [
     {
         id: "4",
 
-        category: "Earbuds",
+        category: "Airdots",
 
         description: "Fuel True Wireless Earbuds",
 
@@ -67,7 +67,7 @@ const Products = [
     {
         id: "5",
 
-        category: "Earbuds",
+        category: "Airdots",
 
         description: " Noise Canceling True Wireless Earbuds",
 

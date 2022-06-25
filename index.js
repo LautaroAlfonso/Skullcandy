@@ -10,108 +10,6 @@ const div = document.querySelector(".div")
 let cart = []
 
 
-const Products = [
-
-    {
-        id: "1",
-
-        category: "Earbuds",
-
-        description: "True Wireless Earbuds",
-
-        name: "Grind®",
-
-        price: "8800",
-
-        img: "img/imagen2.png"
-
-        
-    },
-
-    {
-        id: "2",
-
-        category: "Earbuds",
-
-        description: " Active True Wireless Earbuds",
-
-        name: "Pit Viper Push™ ",
-
-        price: "7000",
-        
-        img: "img/imagen4.png"
-
-        
-    },
-
-    {
-        id: "3",
-
-        category: "Earbuds",
-
-        description: "True Wireless Earbuds",
-
-        name: "Pit Viper Grind®®",
-
-        price: "8600",
-        
-        img: "img/imagen5.png"
-
-        
-    },
-
-    {
-        id: "4",
-
-        category: "Airdots",
-
-        description: "Fuel True Wireless Earbuds",
-
-        name: "Indy™",
-
-        price: "6500",
-        
-        img: "img/imagen6.png"
-
-        
-    },
-
-    {
-        id: "5",
-
-        category: "Airdots",
-
-        description: " Noise Canceling True Wireless Earbuds",
-
-        name: "Indy™ ANC",
-
-        price: "5500",
-        
-        img: "img/imagen7.png"
-
-        
-    },
-
-    {
-        id: "6",
-
-        category: "Earbuds",
-
-        description: "Budweiser Dime® True Wireless Earbuds",
-
-        name: "Grind®",
-
-        price: "9000",
-        
-        img: "img/imagen8.png"
-
-        
-    },
-
-
-]
-
-
 
 // MOSTRAR PRODUCTOS //
 
@@ -120,16 +18,16 @@ function mostrarProductos() {
         let card = document.createElement("div")
         showAllProducts.append(card)
         let img = document.createElement("img")
-        img.setAttribute("src", Product.img)
+        img.setAttribute(  "src", Product.img)
         let name = document.createElement("h3")
         name.innerText = (Product.name)
         let price = document.createElement("p")
         price.innerText = (Product.price)
-        let buyButton = document.createElement("button")
-        buyButton.innerText = ("Agregar")
-        card.append(img, name, price, buyButton)
+        let btnAgregar = document.createElement("button")
+        btnAgregar.innerText = ("Agregar")
+        card.append(img, name, price, btnAgregar)
 
-        buyButton.addEventListener("click", function()
+        btnAgregar.addEventListener("click", function()
         {
             cart.push(Product)
             alert ("Agregaste " + Product.name + " al carrito")
@@ -192,6 +90,37 @@ div.append(totalCompra)
 
 
 
+// Guardar Lista //
+let saveButton = document.getElementById("saveButton");
+Products = []
+
+// Storage y JSON //
+
+
+function guardarCarritoEnLocalStorage(){
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+    saveButton.innerText = ("Guardaste el carrito")
+    div.append(saveButton)
+    }
+
+
+
+    
+function cargarCarritoEnLocalStorage(){
+    
+    if(localStorage.getItem("carrito") !==null){
+        carrito = JSON.parse(localStorage.getItem("carrito"))
+
+    }
+
+}
+
+localStorage.setItem("Products", JSON.stringify(Products))
+
+guardarCarritoEnLocalStorage();
+saveList()
+cargarCarritoEnLocalStorage();
+
 
 // Vaciar carrito //
 
@@ -214,105 +143,54 @@ buttonCart.onclick = () => {
 }
 
 
+
 // Filtrar Productos //
 
-let buscador = document.getElementById("inputSearch")
-let filtrar = document.getElementById("filtrar")
-favoritos.addEventListener("click",favoritos);
+// let buscador = document.getElementById("inputSearch")
+// let filtrar = document.getElementById("filtrar")
+// Products.addEventListener("click",favoritos);
 
-function filtrarPorCat(){
+// function filtrarPorCat(){
 
-    let favoritos = localStorage.getItem("favoritos")
-    let verTodo = document.createElement("button")
-    verTodo.innerText = ("Ver Todo")
-    showProducts.append(verTodo)
-    const filteredProducts = Products.filter((Product)=> Product.category === buscador.value)
-    console.log(filteredProducts)
-
-
-    filteredProducts.forEach((filter)=> {
-
-    let cardFilter = document.createElement("div")
-    showAllProducts.append(card)
-    let imgFilter = document.createElement("img")
-    imgFilter.setAttribute("src", Product.img)
-    let nameFilter = document.createElement("h3")
-    nameFilter.innerText = (Product.name)
-    let priceFilter = document.createElement("p")
-    priceFilter.innerText = (Product.price)
-    let buyButtonFilter = document.createElement("button")
-    buyButtonFilter.innerText = ("Agregar al carrito")
-    cardFilter.append(imgFilter, nameFilter, priceFilter, buyButtonFilter)
-    } )
-
-verTodo.onclick = () => {
-    showAllProducts.innerHTML = ``
-    mostrarProductos()
-}
-
-}
-
-buscador.onchange = () => {
-    showAllProducts.innerHTML = ``
-    filtrarPorCat()
-}
-
-filtrar.onclick = () => {
-    showAllProducts. innerHTML= ``
-    filtrarPorCat()
-}
+//     let Products = localStorage.getItem("favoritos")
+//     let verTodo = document.createElement("button")
+//     verTodo.innerText = ("Ver Todo")
+//     showProducts.append(verTodo)
+//     const filteredProducts = Products.filter((Product)=> Product.category === buscador.value)
+//     console.log(filteredProducts)
 
 
-// Guardar Lista //
+//     filteredProducts.forEach((filter)=> {
 
-let saveButton = document.getElementById("saveButton");
-saveButton.innerText = ("Guardaste el carrito")
-div.append(saveButton)
+//     let cardFilter = document.createElement("div")
+//     showAllProducts.append(card)
+//     let imgFilter = document.createElement("img")
+//     imgFilter.setAttribute("src", Product.img)
+//     let nameFilter = document.createElement("h3")
+//     nameFilter.innerText = (Product.name)
+//     let priceFilter = document.createElement("p")
+//     priceFilter.innerText = (Product.price)
+//     let buyButtonFilter = document.createElement("button")
+//     buyButtonFilter.innerText = ("Agregar al carrito")
+//     cardFilter.append(imgFilter, nameFilter, priceFilter, buyButtonFilter)
+//     } )
 
-function saveList(){
+// verTodo.onclick = () => {
+//     showAllProducts.innerHTML = ``
+//     mostrarProductos()
+// }
 
-    let  = [];
-   
-    for (let i = 0; i < ProductsList.children.length; i++) {
-        
-        let Products = ProductsList.children.item(i);
-        
-       
-        Products.push(Products)
-    }
+// }
 
-}
-saveList()
+// buscador.onchange = () => {
+//     showAllProducts.innerHTML = ``
+//     filtrarPorCat()
+// }
 
-localStorage.setItem("Products", JSON.stringify(Products))
-
-
-
-
-// Storage y JSON //
-
-function guardarCarritoEnLocalStorage(){
-
-    miLocalStorage.setItem("carrito", JSON.stringify(carrito))
-    
-    }
-    guardarCarritoEnLocalStorage();
-    
-    function cargarCarritoEnLocalStorage(){
-    
-        if(miLocalStorage.getItem("carrito") !==null){
-            carrito = JSON.parse(localStorage.getItem("carrito"))
-    
-        }
-    
-    }
-     
-    cargarCarritoEnLocalStorage();
-   
-   
-
-localStorage.setItem("miListaDeProductos", Products)
-
+// filtrar.onclick = () => {
+//     showAllProducts. innerHTML= ``
+//     filtrarPorCat()
+// }
 // Clases carrito de compras//
 
 

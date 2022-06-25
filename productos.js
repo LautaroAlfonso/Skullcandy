@@ -99,82 +99,61 @@ const Products = [
 
 ]
 
-localStorage.setItem("miListaDeProductos",JSON.stringify( Products)); 
+// let carrito;
 
-// function guardarCarritoEnLocalStorage(){
-
-// localStorage.setItem("listaDeProductos", JSON.stringify(Products))
-
+// if (JSON.parse(localStorage.getItem("carrito"))) {
+//     carrito = JSON.parse(localStorage.getItem("carrito"))
+// } else{
+//     localStorage.setItem("carrito", JSON.stringify([]))
+//     carrito = JSON.parse(localStorage.getItem("carrito"))
 // }
 
-// function cargarCarritoEnLocalStorage(){
 
-//     if(localStorage.getItem("listaDeProductos") !==null){
-//         Products = JSON.parse(localStorage.getItem("listaDeProductos"))
-
-//     }
-
-// }
-
-// // Inicio //
-// cargarCarritoEnLocalStorage()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // Guardar Lista //
-
-// let saveButton = document.getElementById("saveButton");
-
-// saveButton.addEventListener("click", saveList);
-
-// function saveList(){
-
-//     alert("Guardaste el carrito")
-
-//     let Products = [];
-
-//     for (let i = 0; i < ProductsList.children.length; i++) {
-        
-//         let producto = ProductsList.children.item(i);
-        
-
-//         Products.push(producto)
-//     }
-
-// localStorage.setItem("listaDeProductos", JSON.stringify(Products))
-
-   
-// }
-
-// // Traer lista guardada //
-// function loadList(){
-
-//     if(localStorage.getItem("listaDeProductos") !=null){
-//         var Products = JSON.parse(localStorage.getItem("listaDeProductos"))
-
-//     }
-
+// function mostrarCarrito() {
 //     for (let i = 0; i < Products.length; i++) {
+//         const element = Products[i];
+//         const {id, name, price, img} = element
+//         const card = `
+//         <div >
+        
+//         <div>
+//         <img class = imgProducto src = "${img}">
+//         <h3> ${name}</h3>
+//         <h3>$ ${price}</h3>
+//         </div>
 
-//         let producto = Products (i);
-//         newProductsItem (producto)
+//         <div class= "btn-container">
+//         <button id= ${id} class = btnAgregar>Agregar</button>
+//         </div>
+
+//         </div>
+//         `   
+         
+     
+//         const showAllProducts = document.getElementById("showAllProducts")
+//         showAllProducts.innerHTML += card
+         
 
 //     }
 
 // }
+// const btnAgregar = document.getElementsByClassName("btnAgregar")
 
-// loadList()
+// for (let i = 0; i < btnAgregar.length; i++) {
+//     const element = btnAgregar[i];
+//     element.addEventListener("click", agregarAlCarrito)
+    
+// }
+
+// mostrarCarrito()
+
+
+
+// function agregarAlCarrito(e){
+//     const btn = e.target;
+//     const id = btn.getAttribute("id")
+//     const prodEncontrados = Products.find( prod = Prod.id == id)
+
+//     console.log(prodEncontrados)
+
+// }

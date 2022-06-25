@@ -330,17 +330,25 @@ button{
 section div div img{
     width: 350px;
     height: 350px;
+    
    
 } 
+
+#showProducts{
+    margin: 20px;
+}
 /* 
 section div div {
     margin: 60px;
 } */
 
 
-
+#showAllProducts div{
+    margin: 50px;
+}
 #showAllProducts{
     display: flex;
     justify-content: center;
     flex-flow: wrap;
+ 
 }

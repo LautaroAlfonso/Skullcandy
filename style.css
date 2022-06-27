@@ -274,9 +274,9 @@ li {
 }
 div button{
     font-family: 'Anton', sans-serif;
-    border-bottom: #000000;
-    border-top: black;
+   
     text-align: center;
+    background-color: #787878;
 
 }
 

@@ -89,18 +89,36 @@ totalCompra.innerText = ("Total: " + total)
 div.append(totalCompra)
 
 
+// Vaciar carrito //
+
+ let deleteCart = document.createElement("button")
+deleteCart.innerText = ("Vaciar carrito")
+div.append(deleteCart)
+
+ deleteCart.onclick = () => {
+    cart =[]
+    div.innerHTML = ``
+    console.log(cart) 
+                            }
+    localStorage.clear();
+}
+
+buttonCart.onclick = () => {
+    div.innerHTML = ``
+
+    showCart()
+}
+
 
 // Guardar Lista //
 let saveButton = document.getElementById("saveButton");
-Products = []
 
 // Storage y JSON //
-
 
 function guardarCarritoEnLocalStorage(){
     localStorage.setItem("carrito", JSON.stringify(carrito))
     saveButton.innerText = ("Guardaste el carrito")
-    div.append(saveButton)
+    saveButton.append(carrito)
     }
 
 
@@ -122,75 +140,53 @@ saveList()
 cargarCarritoEnLocalStorage();
 
 
-// Vaciar carrito //
+//Filtrar Productos //
 
- let deleteCart = document.createElement("button")
-deleteCart.innerText = ("Vaciar carrito")
-div.append(deleteCart)
+let buscador = document.getElementById("inputSearch")
+let filtrar = document.getElementById("filtrar")
+Products.addEventListener("click",favoritos);
 
- deleteCart.onclick = () => {
-    cart =[]
-    div.innerHTML = ``
-    console.log(cart) 
-                            }
-                            localStorage.clear();
+function filtrarPorCat(){
+
+    let Products = localStorage.getItem("favoritos")
+    let verTodo = document.createElement("button")
+    verTodo.innerText = ("Ver Todo")
+    showProducts.append(verTodo)
+    const filteredProducts = Products.filter((Product)=> Product.category === buscador.value)
+    console.log(filteredProducts)
+
+
+    filteredProducts.forEach((filter)=> {
+
+    let cardFilter = document.createElement("div")
+    showAllProducts.append(card)
+    let imgFilter = document.createElement("img")
+    imgFilter.setAttribute("src", Product.img)
+    let nameFilter = document.createElement("h3")
+    nameFilter.innerText = (Product.name)
+    let priceFilter = document.createElement("p")
+    priceFilter.innerText = (Product.price)
+    let buyButtonFilter = document.createElement("button")
+    buyButtonFilter.innerText = ("Agregar al carrito")
+    cardFilter.append(imgFilter, nameFilter, priceFilter, buyButtonFilter)
+    } )
+
+verTodo.onclick = () => {
+    showAllProducts.innerHTML = ``
+    mostrarProductos()
 }
 
-buttonCart.onclick = () => {
-    div.innerHTML = ``
-
-    showCart()
 }
 
+buscador.onchange = () => {
+    showAllProducts.innerHTML = ``
+    filtrarPorCat()
+}
 
-
-// Filtrar Productos //
-
-// let buscador = document.getElementById("inputSearch")
-// let filtrar = document.getElementById("filtrar")
-// Products.addEventListener("click",favoritos);
-
-// function filtrarPorCat(){
-
-//     let Products = localStorage.getItem("favoritos")
-//     let verTodo = document.createElement("button")
-//     verTodo.innerText = ("Ver Todo")
-//     showProducts.append(verTodo)
-//     const filteredProducts = Products.filter((Product)=> Product.category === buscador.value)
-//     console.log(filteredProducts)
-
-
-//     filteredProducts.forEach((filter)=> {
-
-//     let cardFilter = document.createElement("div")
-//     showAllProducts.append(card)
-//     let imgFilter = document.createElement("img")
-//     imgFilter.setAttribute("src", Product.img)
-//     let nameFilter = document.createElement("h3")
-//     nameFilter.innerText = (Product.name)
-//     let priceFilter = document.createElement("p")
-//     priceFilter.innerText = (Product.price)
-//     let buyButtonFilter = document.createElement("button")
-//     buyButtonFilter.innerText = ("Agregar al carrito")
-//     cardFilter.append(imgFilter, nameFilter, priceFilter, buyButtonFilter)
-//     } )
-
-// verTodo.onclick = () => {
-//     showAllProducts.innerHTML = ``
-//     mostrarProductos()
-// }
-
-// }
-
-// buscador.onchange = () => {
-//     showAllProducts.innerHTML = ``
-//     filtrarPorCat()
-// }
-
-// filtrar.onclick = () => {
-//     showAllProducts. innerHTML= ``
-//     filtrarPorCat()
-// }
+filtrar.onclick = () => {
+    showAllProducts. innerHTML= ``
+    filtrarPorCat()
+}
 // Clases carrito de compras//
 
 

@@ -32,14 +32,18 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
     }
+    
   
     mostrarProductos();
+    
+    const contador = document.getElementById("contador")
+    contador.innerHTML = cart.length
   
     // MOSTRAR CARRITO//
   
     let cartView = document.getElementById("showProductsCart");
     let goToCart = document.getElementById("goToCart");
-    // CARRITO ES UN ELEMENTO HTML!
+    
     let carrito = document.getElementById("mostrarCarrito");
   
     let alertCart = document.createElement("h2");
@@ -170,5 +174,9 @@ document.addEventListener("DOMContentLoaded", () => {
       filtrarPorCat();
     };
    
+
+
+
+
   });
   

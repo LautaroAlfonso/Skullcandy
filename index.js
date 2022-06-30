@@ -24,8 +24,15 @@ document.addEventListener("DOMContentLoaded", () => {
   
         btnAgregar.addEventListener("click", function () {
           cart.push(Product);
+          Toastify({
+
+            text: "Agregaste " + Product.name +" al carrito",
+            
+            duration: 3000,
+           
+            }).showToast();
           btnAgregar.addEventListener("click", guardarCarritoEnLocalStorage);
-          alert("Agregaste " + Product.name + " al carrito");
+         
   
           div.innerHTML = "";
           showCart();
@@ -90,6 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let deleteCart = document.createElement("button");
       deleteCart.innerText = "Vaciar carrito";
       div.append(deleteCart);
+      
   
       deleteCart.onclick = () => {
         cart = [];
@@ -103,6 +111,18 @@ document.addEventListener("DOMContentLoaded", () => {
   
     // Guardar Lista //
     let saveButton = document.getElementById("saveButton");
+
+    saveButton.addEventListener("click", function () {
+
+      Toastify({
+
+        text: "Se han guardado los productos del carrito correctamente",
+        
+        duration: 5000
+        
+        }).showToast();
+    
+  })
     
     saveButton.addEventListener("click", guardarCarritoEnLocalStorage);
   

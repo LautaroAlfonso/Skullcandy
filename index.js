@@ -195,8 +195,35 @@ document.addEventListener("DOMContentLoaded", () => {
     };
    
 
+    const createCard = (p) => {
+      contador.innerHTML += `
+      <div>
+          <h2>${p.title}</h2>
+          <img src= "${p.img}" alt="">
+      </div>
+      
+      `
+
+    }
+
+    fetch ("./books.json")
+
+    .then(response => response.json())
+    .then (data =>{
+          console.log(data);
+          createCard(data[0])
+          
+      
+    })
+    .catch(error => console.error(error))
+    
 
 
-
+    
   });
+  
+  
+  
+
+
   

@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const createCard = (p) => {
       contador.innerHTML += `
       <div>
-          <h2>${p.title}</h2>
+          <h2>${p.name}</h2>
           <img src= "${p.img}" alt="">
       </div>
       
@@ -211,11 +211,12 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(response => response.json())
     .then (data =>{
           console.log(data);
-          createCard(data[0])
+          createCard(data[0]);
+          Products = data;
           
       
     })
-    .catch(error => console.error(error))
+  .catch (error => console.error(error))
     
 
 
